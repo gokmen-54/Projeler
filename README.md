@@ -57,3 +57,17 @@ ingestor.start()
 - Demo SQLite kullanır; üretimde TimescaleDB/PostgreSQL tercih edin.
 - Anomali modeli basit `IsolationForest` örneğidir; daha iyi sonuç için gerçek verinizle yeniden eğitin.
 - Flutter istemci veya ek servisler için bu API uçlarını temel alabilirsiniz.
+
+## Kodu GitHub'a Taşıma / Cursor'da Açma
+
+1) **GitHub deposu oluştur**: GitHub'da boş bir repo açın (örn. `energy-monitor-ai`).
+2) **Uzaktan ekle ve push et**:
+   ```bash
+   git remote add origin git@github.com:<kullanici_adiniz>/energy-monitor-ai.git
+   git push -u origin main
+   ```
+   SSH yerine HTTPS kullanıyorsanız `git remote add origin https://github.com/<kullanici_adiniz>/energy-monitor-ai.git` yazabilirsiniz.
+3) **Cursor veya VS Code'da aç**:
+   - Cursor/VS Code açıp **File > Open Folder** ile bu depo klasörünü seçin.
+   - Terminalden de açabilirsiniz: `cursor .` veya `code .`
+4) **Çalıştırma**: Cursor/VS Code terminalinde `cd backend && source .venv/bin/activate` (veya `python -m venv .venv && pip install -r requirements.txt`) ardından `uvicorn app.main:app --reload` komutuyla API'yi başlatın.
